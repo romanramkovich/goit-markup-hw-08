@@ -1,0 +1,40 @@
+.section-team {
+  background-color: $grey-color;
+  padding-top: $primary-margin;
+  padding-bottom: $primary-margin;
+  margin-bottom: $primary-margin;
+}
+
+.employee {
+  display: flex;
+  gap: 30px;
+}
+
+.employee-card {
+  width: 270px;
+  border-radius: 4px;
+  background-color: $white-color;
+  box-shadow: $shadow;
+
+  &__name {
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+
+&__title {
+  font-size: 16px;
+
+  color: $secondary-text-color;
+  margin-bottom: 19px;
+}
+}
+
+.employee-card .card-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}

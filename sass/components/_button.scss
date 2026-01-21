@@ -1,0 +1,38 @@
+.button {
+  border: none;
+  min-width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+
+  color: $white-color;
+  background-color: $accent-color;
+  border-color: transparent;
+
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+
+  transition: scale $transition-timing;
+
+  &:hover {
+    scale: $primary-scale;
+  }
+
+  &--footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin: 0;
+  gap: 10px;
+  min-width: 100px;
+  padding: 10px 29px;
+  padding-right: 28px;
+
+  cursor: pointer;
+}
+}

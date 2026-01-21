@@ -1,0 +1,35 @@
+.list.filter-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: $primary-margin;
+  margin-bottom: 50px;
+}
+
+.filter-list__button {
+  min-width: 73px;
+  padding: 6px 22px;
+
+  color: $primary-text-color;
+  background-color: $grey-color;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.63;
+  letter-spacing: 0.03em;
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: background-color $transition-timing, $transition-scale,
+    color $transition-timing;
+
+    &:hover,
+&:focus {
+  color: $white-color;
+  background-color: $accent-color;
+  box-shadow: $shadow;
+  scale: $primary-scale;
+}
+}

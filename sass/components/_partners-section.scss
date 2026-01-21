@@ -1,0 +1,37 @@
+.partner {
+  display: flex;
+  justify-content: center;
+
+  gap: 30px;
+  margin-bottom: $primary-margin;
+
+  &__link {
+    display: block;
+    padding: 16px 32px;
+
+    border: 1px solid;
+    border-color: $icon-color;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: border-color $transition-timing;
+
+    &:hover,
+    &:focus {
+      border-color: $accent-color;
+    }
+  }
+
+  &__icon {
+    fill: $icon-color;
+
+    transition: fill $transition-timing, $transition-scale;
+
+    .partner__link:hover &,
+    .partner__link:focus & {
+      scale: $primary-scale;
+      fill: $accent-color;
+    }
+  }
+}

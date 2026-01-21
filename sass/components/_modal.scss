@@ -1,0 +1,248 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 1;
+
+  transition: opacity $transition-timing, $transition-scale;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  scale: $primary-scale;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  background-color: $white-color;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  scale: 1;
+}
+
+.close-button {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: $white-color;
+  scale: 1;
+
+  transition: $transition-scale;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    fill: $accent-color;
+  }
+}
+
+.close-icon {
+  display: inline-block;
+  top: 10px;
+  left: 10px;
+  width: 18px;
+  transition: $transition-scale;
+}
+
+// .auth-nav__icon {
+//   z-index: 3;
+// }
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    border: none;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 15px;
+
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+
+    color: $primary-text-color;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    color: $secondary-text-color;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    gap: 6px;
+  }
+
+  &__field {
+    position: relative;
+    width: 100%;
+  }
+}
+
+%textarea {
+  width: 100%;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+
+  transition: border-color $transition-timing;
+}
+
+.modal-form__input {
+  @extend %textarea;
+
+  width: 100%;
+  height: 40px;
+  padding: 11px 12px;
+  padding-left: 42px;
+
+  &:focus {
+    border-color: $accent-color;
+    outline: none;
+  }
+}
+
+.modal-form__textarea {
+  @extend %textarea;
+
+  padding: 12px 16px;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+
+  &::placeholder {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  &:focus {
+      border-color: $accent-color;
+      outline: none;
+    }
+}
+
+.modal-form__icon {
+  position: absolute;
+  height: 18px;
+  width: 18px;
+
+  bottom: 11px;
+  left: 12px;
+  fill: black;
+
+  transition: fill $transition-timing;
+
+  .modal-form__input:focus ~ & {
+    fill: $accent-color;
+  }
+}
+
+.checkbox {
+  display: flex;
+  position: relative;
+  margin-bottom: 30px;
+
+  &__option {
+    display: flex;
+    align-items: center;
+
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    line-height: 1.72;
+    color: $secondary-text-color;
+
+    margin-right: 13px;
+    margin-left: auto;
+  }
+
+  &__input {
+    position: absolute;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &__link {
+    color: $accent-color;
+    text-decoration: underline;
+    margin-left: 5px;
+  }
+}
+
+.checkbox__icon {
+  display: inline-block;
+  position: absolute;
+  width: 16px;
+  height: 15px;
+
+  border: 2px solid black;
+  border-radius: 2px;
+  background-color: $white-color;
+  background-origin: border-box;
+  left: 10px;
+
+  transition: background-color $transition-timing;
+
+  .checkbox__input:checked ~ & {
+    background-color: $accent-color;
+    border-color: $accent-color;
+    background-image: url(../../images/icons/check.svg);
+  }
+
+  .checkbox__input:focus ~ & {
+    border-color: $accent-color;
+  }
+}
+
+.modal-button {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-button + .button {
+  text-align: center;
+  padding: 0;
+  width: 200px;
+  height: 50px;
+
+  box-shadow: $shadow;
+}
