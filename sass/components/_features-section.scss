@@ -1,14 +1,44 @@
 .features {
-  margin-top: $primary-margin;
-  margin-bottom: $primary-margin;
+
+  @media screen and (max-width: 1199px) {
+    margin-top: $primary-margin;
+    margin-bottom: $primary-margin;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: $primary-marginPC;
+    margin-bottom: $primary-marginPC;
+  }
 }
 
 .feature-list {
-  // display: flex;
-  gap: 30px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @media screen and (max-width: 1199px) {
+flex-wrap: wrap;    }
+
+    @media screen and (min-width: $desktop) {
+flex-wrap: nowrap;    }
+  }
 
   &__item {
-    width: 270px;
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: calc((768px - 60px) / 2);
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: calc((1200px - 120px) / 4);
+    }
   }
 
   &__paragraph {

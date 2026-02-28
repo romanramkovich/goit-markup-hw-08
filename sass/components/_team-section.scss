@@ -1,20 +1,51 @@
 .section-team {
   background-color: $grey-color;
-  padding-top: $primary-margin;
-  padding-bottom: $primary-margin;
-  margin-bottom: $primary-margin;
+
+  @media screen and (max-width: 1199px) {
+    padding-top: $primary-margin;
+    margin-bottom: $primary-margin;
+    padding-bottom: $primary-margin;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: $primary-marginPC;
+    margin-bottom: $primary-marginPC;
+    padding-bottom: $primary-marginPC;
+  }
 }
 
 .employee {
   display: flex;
   gap: 30px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: $tablet) {
+    flex-wrap: wrap;
+  }
 }
 
 .employee-card {
-  width: 270px;
   border-radius: 4px;
   background-color: $white-color;
   box-shadow: $shadow;
+
+  @media screen and (max-width: 767px) {
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: calc((768px - 60px) / 2);
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc((1200px - 120px) / 4);
+  }
+
+
+
 
   &__name {
   margin-bottom: 10px;

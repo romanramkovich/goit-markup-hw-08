@@ -3,11 +3,24 @@
 
   font-family: Raleway, sans-serif;
 
-  font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.03em;
   line-height: 100%;
   color: $accent-color;
+
+  @media screen and (max-width:767px) {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  @media screen and (max-width: 1199px){
+    font-size: 24px;
+
+  }
+
+  @media screen and (min-width: $desktop){
+    font-size: 26px;
+  }
 }
 
 .accent {

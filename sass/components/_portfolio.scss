@@ -1,6 +1,14 @@
 .portfolio-page {
-  margin-top: $primary-margin;
-  margin-bottom: $primary-margin;
+
+  @media screen and (max-width: 1199px) {
+    margin-top: $primary-margin;
+    margin-bottom: $primary-margin;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: $primary-marginPC;
+    margin-bottom: $primary-marginPC;
+  }
 }
 
 .portfolio {
@@ -25,7 +33,24 @@
 
 .project {
   box-sizing: border-box;
-  width: 370px;
+
+  // width: 370px;
+
+  @media screen and (max-width:767px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - 30px) / 2);
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 60px) / 3);
+  }
+
+  // &__link {
+  //   height: 100%;
+  // }
 
   &__title {
     font-weight: 700;
@@ -48,8 +73,11 @@
     position: relative;
     overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-content: center;
+    // justify-content: center;
+    // align-content: center;
+    width: 100%;
+    height: 100%;
+  
 
     &::before {
       @extend %project-info-transform;

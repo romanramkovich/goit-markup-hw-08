@@ -1,8 +1,5 @@
-.button {
+%button {
   border: none;
-  min-width: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
   border-radius: 4px;
 
   color: $white-color;
@@ -10,11 +7,19 @@
   border-color: transparent;
 
   font-family: Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.button {
+  @extend %button;
+  min-width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
   font-size: 16px;
   font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
-  cursor: pointer;
 
   transition: scale $transition-timing;
 
@@ -35,4 +40,39 @@
 
   cursor: pointer;
 }
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  z-index: 3;
+
+  border: none;
+  background-color: $white-color;
+  fill: $primary-text-color;
+
+  &:hover {
+    fill: $accent-color;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+  }
+
+.menu-button .icon-cross {
+  display: none;
+}
+
+.menu-button.is-open .icon-cross {
+  display: block;
+  fill: $primary-text-color;
+
+  &:hover {
+    fill: $accent-color;
+  }
+}
+
+.menu-button.is-open .icon-menu {
+  display: none;
 }

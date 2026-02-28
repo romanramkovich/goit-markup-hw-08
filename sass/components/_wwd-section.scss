@@ -1,5 +1,9 @@
 .wwd-conteiner {
   margin-bottom: $primary-margin;
+
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
 }
 
 .wwd {

@@ -1,13 +1,29 @@
 .partner {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 
   gap: 30px;
-  margin-bottom: $primary-margin;
+
+  width: 100%;
+
+  @media screen and (max-width: 1199px) {
+    margin-bottom: $primary-margin;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: $primary-marginPC;
+  }
 
   &__link {
-    display: block;
-    padding: 16px 32px;
+    display: flex;
+    justify-content: center;
+
+    padding-top:16px;
+    padding-bottom: 16px;
+    // padding: 16px 32px;
+
+    width: 100%;
 
     border: 1px solid;
     border-color: $icon-color;
@@ -33,5 +49,19 @@
       scale: $primary-scale;
       fill: $accent-color;
     }
+  }
+}
+
+.partner > li {
+  @media screen and (max-width: 767px) {
+    width: calc(50% - 15px);
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - 90px) / 3);
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 180px) / 6);
   }
 }

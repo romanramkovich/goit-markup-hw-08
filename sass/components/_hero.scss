@@ -1,27 +1,65 @@
 .hero {
-  padding-top: 200px;
-  padding-bottom: 200px;
+  // padding-top: 200px;
+  // padding-bottom: 200px;
 
   text-align: center;
+  // background-size: 1600px;
 
-  background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    );
+  @media screen and (max-width: 1199px) {
+    padding-top: 118px;
+    padding-bottom: 118px;
+  }
 
-  background-size: 100%;
+  @media screen and (min-width: $desktop) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+
+  background-image:
+    linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../../images/hero-mobile.jpg);
+
+  @media screen and (min-resolution: 2dppx) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../images/hero-mobileX2.jpg);
+  }
+
+  @media screen and (min-width: 481px) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../images/hero-tablet.jpg);
+
+    @media (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../images/hero-tabletX2.jpg);
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../images/hero-desktop.jpg);
+
+    @media (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../images/hero-desktopX2.jpg);
+    }
+  }
+
   background-repeat: no-repeat;
-  background-position: center;
+  //  background-size: contain;
+  background-size: cover;
 
   &__title {
     margin-bottom: 30px;
 
     color: $white-color;
-    font-size: 44px;
+    line-height: 1.61;
     font-weight: 900;
     letter-spacing: 0.06em;
-    line-height: 1.36;
-
     text-transform: uppercase;
+
+    @media screen and (max-width: 1199px) {
+      font-size: 26px;
+      line-height: 1.61;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 44px;
+      line-height: 1.36;
+    }
   }
 }
