@@ -11,6 +11,10 @@ body {
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
   line-height: 1; 
+
+  .nav.is-open &{
+    overflow: hidden;
+  }
 }
 
 body.modal-open {
